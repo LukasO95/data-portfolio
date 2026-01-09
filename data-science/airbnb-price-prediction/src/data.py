@@ -121,7 +121,7 @@ def make_processed_sample_listings(sample_size: int = 3000):
     os.makedirs(os.path.dirname(PROCESSED_SAMPLE_PATH), exist_ok=True)
     df_small.to_csv(PROCESSED_SAMPLE_PATH, index=False)
     print(f"Fertig ✅ Gespeichert unter {PROCESSED_SAMPLE_PATH}")
-    print(f"Stichprobengröße:({len(df_small)} Zeilen)")
+    print(f"Stichprobengröße: {len(df_small)} Zeilen")
 
     return df_small
 
