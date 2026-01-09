@@ -52,7 +52,8 @@ data / models / notebooks / scripts / src
 ## ▶️ Run
 ```bash
 PYTHONPATH=. python scripts/make_processed_data.py --sample_size 10000
+```
 Modeling and evaluation are documented in Jupyter notebooks.
 
-👤 Author
-Lukas Ogrzewalla 
+## 👤 Author
+**Lukas Ogrzewalla**
