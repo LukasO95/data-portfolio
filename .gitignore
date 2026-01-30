@@ -5,6 +5,7 @@ __pycache__/
 *.py[cod]
 *.log
 *.tmp
+.pytest_cache
 
 # ---------------------------
 # Virtual Environments
@@ -26,6 +27,8 @@ __pycache__/
 **/data/*
 !data-science/airbnb-price-prediction/data/processed/
 !data-science/airbnb-price-prediction/data/processed/sample*.csv
+!data-science/finance-inquiry-intent-classification/data/
+!data-science/finance-inquiry-intent-classification/data/eval_samples.json
 
 # ---------------------------
 # Models
