@@ -1,0 +1,4 @@
+# Runtime dependencies
+openai>=2.15.0
+python-dotenv>=1.0.0
+jsonschema>=4.0.0
