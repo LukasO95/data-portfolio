@@ -1,0 +1,12 @@
+[
+  {"text": "Sehr geehrte Damen und Herren, ich interessiere mich für eine Baufinanzierung", "expected": "product"},
+  {"text": "Guten Tag, in meinem Grundbuch ist noch eine Grundschuld. Wie hoch ist sie?", "expected": "service"},
+  {"text": "Mein Zugang ist gesperrt. Wie kann ich ihn öffnen?", "expected": "service"},
+  {"text": "Guten Tag, ich möchte eine bisherige Nichtwohnfläche umwandeln und möchte eine KFW-Förderung", "expected": "product"},
+  {"text": "Brauche Kredit für Modernisierung", "expected": "product"},
+  {"text": "Wir möchten gerne einen Termin vereinbaren bezüglich Vertragsnummer <ID>.", "expected": "unclear"},
+  {"text": "Wir sind am überlegen nachträglich Geld zur Modernisierung aufzunehmen.", "expected": "product"},
+  {"text": "Bitte schicken Sie mir den Jahreskontoauszug per Post zu!", "expected": "service"},
+  {"text": "Bitte Kopie der Steuerbescheinigung 2024 per Post senden.", "expected": "service"},
+  {"text": "Hallo zusammen, benötige Angebote für eine Immobilienfinanzierung", "expected": "product"}
+]
