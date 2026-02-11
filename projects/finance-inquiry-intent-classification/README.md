@@ -146,6 +146,7 @@ Covered:
 - provider-side quota limits (OpenAI dashboard)
 - client-side rate limiting (real API only)
 - early exit for empty text to manual clearing
+
 The system prioritizes **safe routing over forced classification**.
 
 ----
