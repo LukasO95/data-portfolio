@@ -36,7 +36,9 @@ def _fallback_payload(raw_text, reason_code, error):
     }
 
 
-def classify_and_prepare_crm(raw_text, threshold=DEFAULT_THRESHOLD, model=DEFAULT_MODEL):
+def classify_and_prepare_crm(
+    raw_text, threshold=DEFAULT_THRESHOLD, model=DEFAULT_MODEL
+):
     """
     End-to-end pipeline:
     - check for empty text
