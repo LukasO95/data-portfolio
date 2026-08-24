@@ -1,0 +1,10 @@
+{
+  "artifact_path": "data/processed/daily_trip_count_2022.csv",
+  "generated_at_utc": "2026-08-24T11:49:03.486301+00:00",
+  "artifact_role": "aggregated_model_source",
+  "source_year": 2022,
+  "source_raw_file": "data/raw/2022_Yellow_Taxi_Trip_Data.csv",
+  "target_column": "daily_trip_count",
+  "time_column": "date",
+  "row_count": 181
+}

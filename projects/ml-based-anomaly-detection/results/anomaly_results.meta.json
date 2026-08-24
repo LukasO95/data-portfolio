@@ -1,0 +1,38 @@
+{
+  "artifact_path": "/Users/lukas/data-projects/data-portfolio/projects/ml-based-anomaly-detection/results/anomaly_results.csv",
+  "generated_at_utc": "2026-08-13T13:57:44.923651+00:00",
+  "artifact_role": "anomaly_detection_results",
+  "calibration_dataset": "/Users/lukas/data-projects/data-portfolio/projects/ml-based-anomaly-detection/data/processed/calibration_reference.csv",
+  "anomaly_dataset": "/Users/lukas/data-projects/data-portfolio/projects/ml-based-anomaly-detection/data/processed/anomaly_injected.csv",
+  "model_path": "/Users/lukas/data-projects/data-portfolio/projects/ml-based-anomaly-detection/models/lgbm_tuned.pkl",
+  "quantiles": [
+    0.9,
+    0.95,
+    0.99
+  ],
+  "alert_levels": [
+    "high"
+  ],
+  "row_count": 59,
+  "columns": [
+    "date",
+    "lag_1",
+    "lag_7",
+    "rolling_median_7",
+    "rolling_std_7",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "trend",
+    "seasonal",
+    "actual",
+    "predicted",
+    "score",
+    "severity",
+    "is_anomaly",
+    "true_anomaly",
+    "true_anomaly_type",
+    "anomaly_id",
+    "is_injected_anomaly"
+  ]
+}

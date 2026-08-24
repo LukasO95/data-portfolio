@@ -1,0 +1,27 @@
+{
+  "artifact_path": "data/processed/model_train.csv",
+  "generated_at_utc": "2026-08-24T11:55:31.422423+00:00",
+  "artifact_role": "model_train",
+  "source_year": 2022,
+  "source_raw_file": "data/raw/2022_Yellow_Taxi_Trip_Data.csv",
+  "source_aggregated_file": "data/processed/daily_trip_count_2022.csv",
+  "split": {
+    "train_end": "2022-05-31",
+    "test_start": "2022-06-01",
+    "test_end": "2022-06-29"
+  },
+  "row_count": 144,
+  "columns": [
+    "date",
+    "daily_trip_count",
+    "trend",
+    "seasonal",
+    "lag_1",
+    "lag_7",
+    "rolling_median_7",
+    "rolling_std_7",
+    "day_of_week",
+    "day_of_month",
+    "month"
+  ]
+}
