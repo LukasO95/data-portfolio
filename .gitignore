@@ -20,7 +20,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # ---------------------------
-# Data
+# General Data
 # ---------------------------
 **/data/raw/
 **/logs/
@@ -31,3 +31,9 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# ---------------------------
+# Project-specific
+# ---------------------------
+# Generated model artifacts for the Airbnb price prediction project
+projects/airbnb-price-prediction/models/
