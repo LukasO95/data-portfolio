@@ -1,0 +1,9 @@
+# Runtime dependencies
+pandas>=2.3.3
+numpy>=2.3.4
+scikit-learn>=1.7.2
+lightgbm>=4.6.0
+statsmodels>=0.14.6
+matplotlib>=3.10.7
+joblib>=1.5.2
+PyYAML>=6.0.3

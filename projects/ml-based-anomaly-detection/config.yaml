@@ -1,0 +1,50 @@
+target:
+  name: daily_trip_count
+
+time:
+  name: date
+
+features:
+  lags:
+    - name: lag_1
+      shift: 1
+    - name: lag_7
+      shift: 7
+  rolling:
+    - name: rolling_median_7
+      col: daily_trip_count
+      window: 7
+      func: median
+    - name: rolling_std_7
+      col: daily_trip_count
+      window: 7
+      func: std
+  calendar:
+    - name: day_of_week
+      source: date
+      expr: weekday
+    - name: day_of_month
+      source: date
+      expr: day
+    - name: month
+      source: date
+      expr: month
+  stl:
+    period: 7
+    components: ["trend", "seasonal"]
+
+data_split:
+  model:
+    train_end: 2022-05-31
+    test_start: 2022-06-01
+    test_end: 2022-06-29
+  calibration:
+    start: 2022-01-01
+    end: 2022-02-28
+  anomaly:
+    start: 2023-01-01
+    end: 2023-02-28
+
+anomaly_detection:
+  quantiles: [0.90, 0.95, 0.99]
+  alert_levels: ["high"]
