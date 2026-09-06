@@ -12,6 +12,7 @@ __pycache__/
 # ---------------------------
 **/venv/
 **/.venv/
+.env
 **/.env
 
 # ---------------------------
@@ -26,6 +27,11 @@ __pycache__/
 **/logs/
 
 # ---------------------------
+# Model Artifacts
+# ---------------------------
+**/models/
+
+# ---------------------------
 # System / OS
 # ---------------------------
 .DS_Store
@@ -35,5 +41,3 @@ Thumbs.db
 # ---------------------------
 # Project-specific
 # ---------------------------
-# Generated model artifacts for the Airbnb price prediction project
-projects/airbnb-price-prediction/models/
