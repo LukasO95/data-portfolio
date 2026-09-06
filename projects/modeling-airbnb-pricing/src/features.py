@@ -1,4 +1,4 @@
-# src/airbnb_price_prediction/features.py
+# src/features.py
 import pandas as pd
 
 

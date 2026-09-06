@@ -57,6 +57,17 @@ def create_preprocessor():
     return preprocessor
 
 
+def create_model_pipeline(model):
+    """Erstellt eine Pipeline aus Preprocessing und dem übergebenem Modell."""
+    pipeline = Pipeline(
+        [
+            ("preprocess", create_preprocessor()),
+            ("model", model),
+        ]
+    )
+    return pipeline
+
+
 def get_train_test_data(test_size=0.2):
     df = load_sample_listings()
     df = add_amenity_count(df)
@@ -97,16 +108,9 @@ def train_rf():
     print("\nTraining: RandomForest (Original-Target)")
 
     X_train, X_test, y_train, y_test = get_train_test_data()
-    preprocessor = create_preprocessor()
 
     model = RandomForestRegressor(n_estimators=200, random_state=42, n_jobs=-1)
-
-    pipeline = Pipeline(
-        [
-            ("preprocess", preprocessor),
-            ("model", model),
-        ]
-    )
+    pipeline = create_model_pipeline(model)
 
     pipeline.fit(X_train, y_train)
 
@@ -124,16 +128,9 @@ def train_rf_log():
     print("\nTraining: RandomForest (log-Target)")
 
     X_train, X_test, y_train, y_test = get_train_test_data()
-    preprocessor = create_preprocessor()
 
     model = RandomForestRegressor(n_estimators=200, random_state=42, n_jobs=-1)
-
-    pipeline = Pipeline(
-        [
-            ("preprocess", preprocessor),
-            ("model", model),
-        ]
-    )
+    pipeline = create_model_pipeline(model)
 
     y_train_log = np.log1p(y_train)
     pipeline.fit(X_train, y_train_log)
@@ -157,8 +154,7 @@ def train_xgb_log():
     print("\nTraining: XGBRegressor (log-Target)")
 
     X_train, X_test, y_train, y_test = get_train_test_data()
-    preprocessor = create_preprocessor()
-
+    
     model = XGBRegressor(
         n_estimators=300,
         learning_rate=0.1,
@@ -170,12 +166,7 @@ def train_xgb_log():
         objective="reg:squarederror",
     )
 
-    pipeline = Pipeline(
-        [
-            ("preprocess", preprocessor),
-            ("model", model),
-        ]
-    )
+    pipeline = create_model_pipeline(model)
 
     y_train_log = np.log1p(y_train)
     pipeline.fit(X_train, y_train_log)

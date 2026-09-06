@@ -3,12 +3,18 @@ import pandas as pd
 import numpy as np
 import joblib
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from pathlib import Path
 
 from .config import (
+    PROJECT_ROOT,
     RF_MODEL_PATH, RF_PREDICTIONS_PATH,
     RF_LOG_MODEL_PATH, RF_LOG_PREDICTIONS_PATH,
     XGB_LOG_MODEL_PATH, XGB_LOG_PREDICTIONS_PATH,
 )
+
+def display_path(path):
+    """Gibt den Pfad relativ zum Projektstammverzeichnis zurück."""
+    return Path(path).resolve().relative_to(PROJECT_ROOT.resolve())
 
 
 # Mapping
@@ -53,7 +59,7 @@ def evaluate_models():
     for key, path in PREDICTION_PATHS.items():
         try:
             df = pd.read_csv(path)
-            print(f"Vorhersagen geladen: {key} ({path}) – {len(df)} Zeilen")
+            print(f"Vorhersagen geladen: {key} ({display_path(path)}) – {len(df)} Zeilen")
         except FileNotFoundError:
             print(f"Datei nicht gefunden: {path}")
             continue
@@ -82,10 +88,10 @@ def load_model(model_key):
     path = MODEL_PATHS[model_key]
     try:
         model = joblib.load(path)
-        print(f"Modell geladen: {model_key} ({path})")
+        print(f"Modell geladen: {model_key} ({display_path(path)})")
         return model
     except FileNotFoundError:
-        print(f"Modell nicht gefunden: {path}")
+        print(f"Modell nicht gefunden: {display_path(path)}")
         return None
 
 

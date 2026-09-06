@@ -1,4 +1,4 @@
-# src/airbnb_price_prediction/data.py
+# src/data.py
 import os
 import pandas as pd
 
@@ -80,7 +80,7 @@ def fill_missing(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def select_and_sample(df: pd.DataFrame, sample_size: int = 3000) -> pd.DataFrame:
+def select_and_sample(df: pd.DataFrame, sample_size: int = 10000) -> pd.DataFrame:
     cols = [
         "price",
         "neighbourhood",
@@ -120,7 +120,7 @@ def make_processed_sample_listings(sample_size: int = 3000):
 
     os.makedirs(os.path.dirname(PROCESSED_SAMPLE_PATH), exist_ok=True)
     df_small.to_csv(PROCESSED_SAMPLE_PATH, index=False)
-    print(f"Fertig ✅ Gespeichert unter {PROCESSED_SAMPLE_PATH}")
+    print(f"Gespeichert unter {PROCESSED_SAMPLE_PATH}")
     print(f"Stichprobengröße: {len(df_small)} Zeilen")
 
     return df_small

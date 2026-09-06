@@ -4,7 +4,7 @@ from src.data import make_processed_sample_listings
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sample_size", type=int, default=3000)
+    parser.add_argument("--sample_size", type=int, default=10000)
     args = parser.parse_args()
 
     make_processed_sample_listings(sample_size=args.sample_size)
