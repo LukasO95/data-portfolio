@@ -33,7 +33,7 @@ The pipeline keeps the workflow deliberately focused on model comparison:
 
 All baseline models use the same 80/20 train-test split (`random_state=42`) and a shared scikit-learn preprocessing pipeline: numeric inputs are standardized and categorical inputs are one-hot encoded. This makes the reported differences attributable to the modeling choices rather than different data splits or feature treatment.
 
-The project compares an original-scale Random Forest with log-target variants of Random Forest and XGBoost. For log-target models, training uses `log1p(price)` and predictions are transformed back with `expm1` before metrics are calculated on the original price scale.
+The project compares an original-scale Random Forest with log-target variants of Random Forest and XGBoost. For log-target models, training uses `log1p(price)` and predictions are transformed back with `expm1(price)` before metrics are calculated on the original price scale.
 
 | Model | Target scale | RMSE | MAE | R2 |
 | --- | --- | ---: | ---: | ---: |
@@ -51,10 +51,10 @@ This design tests whether specialized regressors can capture patterns that a sin
 
 ## Workflow
 
-1. [Explore the data](notebooks/01_exploratory_data_analysis.ipynb) and inspect the target distribution.
-2. [Prepare features and baseline models](notebooks/02_feature_engineering_and_model.ipynb).
-3. [Evaluate model predictions](notebooks/03_model_evaluation.ipynb).
-4. [Explore segmented modeling and Mixture of Experts](notebooks/04_segmented_modeling_and_mixture_of_experts.ipynb).
+1. [Explore the data](notebooks/01_exploratory_data_analysis.ipynb)
+2. [Prepare features and baseline models](notebooks/02_feature_engineering_and_model.ipynb)
+3. [Evaluate model predictions](notebooks/03_model_evaluation.ipynb)
+4. [Explore segmented modeling and Mixture of Experts](notebooks/04_segmented_modeling_and_mixture_of_experts.ipynb)
 
 ## Repository Structure
 
